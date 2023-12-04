@@ -17,13 +17,13 @@ Welcome to the project documentation for an innovative addition to the world of 
 
 ### Launcher
 
-![Golf Buddy 2](/images/product_photos/PXL_20231204_000930088.jpg)
-![Golf Buddy 3](/images/product_photos/PXL_20231204_000943244.jpg)
+<img src="/images/product_photos/PXL_20231204_000930088.jpg" width="300" height="300">
+<img src="/images/product_photos/PXL_20231204_000943244.jpg" width="300" height="300">
 
 ### Hole
 
-![Golf Buddy 4](/images/product_photos/PXL_20231204_000956457.jpg)
-![Golf Buddy 5](/images/product_photos/PXL_20231204_001002481.jpg)
+<img src="/images/product_photos/PXL_20231204_000956457.jpg" width="300" height="300">
+<img src="/images/product_photos/PXL_20231204_001002481.jpg" width="300" height="300">
 
 ## Hardware
 
@@ -43,8 +43,8 @@ Welcome to the project documentation for an innovative addition to the world of 
 ### CAD
 
 **Launcher**:
-![Launcher](/images/cad/Full%20Laucnher.png)
-![Inner Tube](/images/cad/Feeder%20Tube.png)
+<img src="/images/cad/Full%20Laucnher.png" height="300">
+<img src="/images/cad/Feeder%20Tube.png" height="300">
 
 ### Laser Cut Parts
 
@@ -77,10 +77,10 @@ However, the issue arose during integration with the golf balls. The RFID was no
 The original design of the launcher was a tube that would need an additional feeder tube to function. The issue with this design was that the ball would get stuck in the feeder tube and not be able to be launched. The solution was to change the design to a single tube that would be able to launch the ball without the need of a feeder tube.
 
 **Hole Initial Design**:
-![Hole](/images/cad/Inital%20Concept.png)
+<img src="/images/cad/Inital%20Concept.png" height=300>
 
 **Hole Final Design**:
-![Hole](/images/cad/Full%20Laucnher.png)
+<img src="/images/cad/Full%20Laucnher.png" height=300>
 
 However, this design didn't allow enough balls to be loaded in and our project changed to a single ball launcher. At this point, we decided to completely pivot from a putting assistant to a fun golf ball launcher. The lesson learned was to not be afraid to change the design if it doesn't work.
 
@@ -103,6 +103,6 @@ However, this design didn't allow enough balls to be loaded in and our project c
 We would like to thank the following people for their contributions to this project:
 
 Our ambassador and visionary, Golf Daddy:
-![Golf Daddy](/images/ambassador.jpg)
+<img src="/images/ambassador.jpg" height=300>
 
 Golf Daddy helped us and supported us through the initial stages of this project. He provided us with the inspiration and motivation to pursue this project, and we are forever grateful for his guidance.
