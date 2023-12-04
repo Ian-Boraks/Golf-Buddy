@@ -106,6 +106,6 @@ We would like to thank the following people for their contributions to this proj
 
 Our ambassador and visionary, Golf Daddy:
 
-<img src="/images/ambassador.jpg" height=300>
+<img src="/images/ambassador.jpg" width=300 height=300>
 
 Golf Daddy helped us and supported us through the initial stages of this project. He provided us with the inspiration and motivation to pursue this project, and we are forever grateful for his guidance.
