@@ -40,24 +40,19 @@ Welcome to the project documentation for an innovative addition to the world of 
 | Limit Switch     | 2        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
 | Switches         | 2        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
 
-### 3D Printed Parts
+### CAD
 
 **Launcher**:
-![Launcher]()
+![Launcher](/images/cad/Full%20Laucnher.png)
+![Inner Tube](/images/cad/Feeder%20Tube.png)
 
-**Launcher Wheel**:
-![Launcher Wheel]()
-
-**Launcher Wheel Mount**:
-![Launcher Wheel Mount]()
-
-**Hole**:
-![Hole]()
+**Hole Initial Design**:
+![Hole](/images/cad/Inital%20Concept.png)
 
 ### Laser Cut Parts
 
 **Hole Plate**:
-![Launcher Plate]()
+![Launcher Plate](/images/cad/Plate.png)
 
 ## Electronics
 
