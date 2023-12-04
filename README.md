@@ -51,7 +51,7 @@ Welcome to the project documentation for an innovative addition to the world of 
 ### Laser Cut Parts
 
 **Hole Plate**: \
-<img src="/images/cad/Plate.png" width="300" height="300">
+<img src="/images/cad/Plate.png" height="300">
 
 ## Electronics
 
