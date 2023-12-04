@@ -46,9 +46,6 @@ Welcome to the project documentation for an innovative addition to the world of 
 ![Launcher](/images/cad/Full%20Laucnher.png)
 ![Inner Tube](/images/cad/Feeder%20Tube.png)
 
-**Hole Initial Design**:
-![Hole](/images/cad/Inital%20Concept.png)
-
 ### Laser Cut Parts
 
 **Hole Plate**:
@@ -74,6 +71,18 @@ The original idea was to use the RFID tags embedded into the balls to read the p
 
 However, the issue arose during integration with the golf balls. The RFID was not strong enough to travel through the golf ball to get consistent readings. The issue only worsened with the launcher integration because the ball traveled too fast to be read. The RFID hardware needed to be changed with something that could be more reliable and work at faster speeds. The change to limit swithces proved to be very reliable and work on any speed we tested because of the simplicity of the tech. The lessoned learned was to not overcomplicate things sometimes instead of trying to make a golf ball smart just add a simple button. \
 <img src="/images/IMG_2627.JPG" width="300" height="300">
+
+### Launcher
+
+The original design of the launcher was a tube that would need an additional feeder tube to function. The issue with this design was that the ball would get stuck in the feeder tube and not be able to be launched. The solution was to change the design to a single tube that would be able to launch the ball without the need of a feeder tube.
+
+**Hole Initial Design**:
+![Hole](/images/cad/Inital%20Concept.png)
+
+**Hole Final Design**:
+![Hole](/images/cad/Full%20Laucnher.png)
+
+However, this design didn't allow enough balls to be loaded in and our project changed to a single ball launcher. At this point, we decided to completely pivot from a putting assistant to a fun golf ball launcher. The lesson learned was to not be afraid to change the design if it doesn't work.
 
 ## Skills Beyond
 
