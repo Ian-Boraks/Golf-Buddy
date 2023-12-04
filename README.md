@@ -41,6 +41,7 @@ Welcome to the project documentation for an innovative addition to the world of 
 | 3D Printed Parts | 1        | ~~~    | ~~~                                                                                           |
 | Limit Switch     | 2        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
 | Switches         | 2        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
+| Microphone       | 1        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
 
 ### CAD
 
@@ -85,6 +86,8 @@ The original design of the launcher was a tube that would need an additional fee
 <img src="/images/cad/Full%20Laucnher.png" height=300>
 
 However, this design didn't allow enough balls to be loaded in and our project changed to a single ball launcher. At this point, we decided to completely pivot from a putting assistant to a fun golf ball launcher. The lesson learned was to not be afraid to change the design if it doesn't work.
+
+The final pivot point was the addition of a miss counter. This is done via a mic on the back of the device that can track if the user misses. This allows us to re-gamify the system and add a competitive aspect to the game.
 
 ## Skills Beyond
 
