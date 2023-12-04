@@ -25,7 +25,10 @@ int buttonState = 1;
 int hits = 0;
 
 bool gameOver = false;
-bool player = false;
+bool player = true;
+
+int playerOnePoints = 0;
+int playerTwoPoints = 0;
 
 byte readCard[4];
 const char *rfidTags[] = {"931D7CD", "492561", "4A23E1", "451421"};
@@ -54,30 +57,18 @@ void setup()
   Serial.println("Scan Card");
 }
 
-void checkPoints()
+void updatePoints()
 {
-  if (points >= 16)
+  for (int i = 0; i < min(points, 8); i++)
   {
-    Serial.println("Looser");
-
-    dissolve();
-
-    points = 0;
-    gameOver = true;
+    mx.setColumn(i, 0xf0);
+    delay(DELAYTIME);
   }
-  else
-  {
-    for (int i = 0; i < min(points, 8); i++)
-    {
-      mx.setColumn(i, 0xf0);
-      delay(DELAYTIME);
-    }
 
-    for (int i = points - 8; i < min(points, 16); i++)
-    {
-      mx.setColumn(i - 8, 0xff);
-      delay(DELAYTIME);
-    }
+  for (int i = points - 8; i < min(points, 16); i++)
+  {
+    mx.setColumn(i - 8, 0xff);
+    delay(DELAYTIME);
   }
 }
 
@@ -90,21 +81,19 @@ void loop()
   if (player)
   {
     displayNumberOne();
-    player = false;
   }
   else
   {
     displayNumberTwo();
-    player = true;
   }
 
   delay(5000);
   dissolve();
 
-  while (digitalRead(button) && !gameOver)
+  while (digitalRead(button))
   {
     int sound = analogRead(mic);
-    if (sound < 10)
+    if (sound < 20)
     {
       hits++;
       delay(500);
@@ -113,7 +102,12 @@ void loop()
 
       points++;
 
-      checkPoints();
+      updatePoints();
+    }
+
+    if (hits >= 16)
+    {
+      break;
     }
   }
 
@@ -123,53 +117,118 @@ void loop()
   Serial.print("Total POINTS: ");
   Serial.println(points);
 
-  win();
+  if (player)
+  {
+    playerOnePoints += points;
+  }
+  else
+  {
+    playerTwoPoints += points;
+  }
+
+  if (points < 16)
+  {
+    win();
+  }
+  else
+  {
+    dissolve();
+  }
+
+  if (!player)
+  {
+    Serial.print("Player 1: ");
+    Serial.println(playerOnePoints);
+    Serial.print("Player 2: ");
+    Serial.println(playerTwoPoints);
+
+    if (playerOnePoints < playerTwoPoints)
+    {
+      // Blink player 1
+      for (int i = 0; i < 3; i++)
+      {
+        displayNumberOne();
+        delay(500);
+        mx.clear();
+        delay(500);
+      }
+    }
+    else if (playerOnePoints > playerTwoPoints)
+    {
+      // Blink player 2
+      for (int i = 0; i < 3; i++)
+      {
+        displayNumberTwo();
+        delay(500);
+        mx.clear();
+        delay(500);
+      }
+    }
+    else
+    {
+      // Blink both
+      for (int i = 0; i < 3; i++)
+      {
+        displayNumberOne();
+        delay(500);
+        mx.clear();
+        delay(500);
+
+        displayNumberTwo();
+        delay(500);
+        mx.clear();
+        delay(500);
+      }
+    }
+
+    playerOnePoints = 0;
+    playerTwoPoints = 0;
+  }
+
+  player = !player;
 }
 
 void win()
 {
   points = 0;
 
-  for (int i = 0; i < 3; i++)
+  int rmin = 0, rmax = ROW_SIZE - 1;
+  int cmin = 0, cmax = (COL_SIZE * MAX_DEVICES) - 1;
+
+  mx.clear();
+  while ((rmax > rmin) && (cmax > cmin))
   {
-    int rmin = 0, rmax = ROW_SIZE - 1;
-    int cmin = 0, cmax = (COL_SIZE * MAX_DEVICES) - 1;
-
-    mx.clear();
-    while ((rmax > rmin) && (cmax > cmin))
+    // do row
+    for (int i = cmin; i <= cmax; i++)
     {
-      // do row
-      for (int i = cmin; i <= cmax; i++)
-      {
-        mx.setPoint(rmin, i, true);
-        delay(DELAYTIME / MAX_DEVICES);
-      }
-      rmin++;
-
-      // do column
-      for (uint8_t i = rmin; i <= rmax; i++)
-      {
-        mx.setPoint(i, cmax, true);
-        delay(DELAYTIME / MAX_DEVICES);
-      }
-      cmax--;
-
-      // do row
-      for (int i = cmax; i >= cmin; i--)
-      {
-        mx.setPoint(rmax, i, true);
-        delay(DELAYTIME / MAX_DEVICES);
-      }
-      rmax--;
-
-      // do column
-      for (uint8_t i = rmax; i >= rmin; i--)
-      {
-        mx.setPoint(i, cmin, true);
-        delay(DELAYTIME / MAX_DEVICES);
-      }
-      cmin++;
+      mx.setPoint(rmin, i, true);
+      delay(DELAYTIME / MAX_DEVICES);
     }
+    rmin++;
+
+    // do column
+    for (uint8_t i = rmin; i <= rmax; i++)
+    {
+      mx.setPoint(i, cmax, true);
+      delay(DELAYTIME / MAX_DEVICES);
+    }
+    cmax--;
+
+    // do row
+    for (int i = cmax; i >= cmin; i--)
+    {
+      mx.setPoint(rmax, i, true);
+      delay(DELAYTIME / MAX_DEVICES);
+    }
+    rmax--;
+
+    // do column
+    for (uint8_t i = rmax; i >= rmin; i--)
+    {
+      mx.setPoint(i, cmin, true);
+      delay(DELAYTIME / MAX_DEVICES);
+    }
+    cmin++;
   }
 
   mx.clear();

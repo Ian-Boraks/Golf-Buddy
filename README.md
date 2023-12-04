@@ -2,6 +2,8 @@
 
 ![Golf Buddy](/images/GolfDaddy.png)
 
+[Demo Video (https://youtu.be/wagic4B7uYY)](https://youtu.be/wagic4B7uYY)
+
 ## Overview
 
 Welcome to the project documentation for an innovative addition to the world of mini golf: a High-Speed Golf Ball Shooter. This project began with a simple yet ambitious goal: to enhance the traditional golfing experience, particularly in the realm of putting. Our initial vision was to develop a tool that would assist golfers in refining their putting skills in a competitive and engaging manner. However, as we delved deeper into the project, our focus shifted, leading us to a more dynamic and playful interpretation of golfing aids.
@@ -67,8 +69,8 @@ Welcome to the project documentation for an innovative addition to the world of 
 
 ![Wiring Diagram](/Electrical/Hole/Schematic.png)
 
-
 ## Testing
+
 ### RFID
 
 The original idea was to use the RFID tags embedded into the balls to read the player's score. Initial testing with the RFID was positive, as it could read different tags with different point values and add them. \
@@ -78,13 +80,19 @@ The original idea was to use the RFID tags embedded into the balls to read the p
 However, the issue arose during integration with the golf balls. The RFID was not strong enough to travel through the golf ball to get consistent readings. The issue only worsened with the launcher integration because the ball traveled too fast to be read. The RFID hardware needed to be changed with something that could be more reliable and work at faster speeds. The change to limit swithces proved to be very reliable and work on any speed we tested because of the simplicity of the tech. The lessoned learned was to not overcomplicate things sometimes instead of trying to make a golf ball smart just add a simple button. \
 <img src="/images/IMG_2627.JPG" width="300" height="300">
 
+## Skills Beyond
 
-## Skills Beyond 
 ### Fernando
+
 - Laser cutting metal using the fablight in The Hive
 - Programming on a Seeed Studio XIAO SAMD21 mircocontroller
 - Using multiple SPI devices
 
+### Ian
+
+- Laser cutting metal using the fablight in The Hive
+- Doing manual brushless motor control
+- Sublimation printing
 
 ## Special Thanks
 
