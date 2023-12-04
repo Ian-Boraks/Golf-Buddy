@@ -67,10 +67,16 @@ Welcome to the project documentation for an innovative addition to the world of 
 
 ![Wiring Diagram](/Electrical/Hole/Schematic.png)
 
-##Testing
-### RFID
-The original idea was to use the RFID tags embedded into the balls to read the player's score. Initial testing with the RFID was positive, as it could read different tags with different point values and add them. However, the issue arose during integration with the golf balls. The RFID was not strong enough to travel through the golf ball to get consistent readings. The issue only worsened with the launcher integration because the ball traveled too fast to be read. The RFID hardware needed to be changed with something that could be more reliable and work at faster speeds. The change to limit swithces proved to be very reliable and work on any speed we tested.
 
+## Testing
+### RFID
+The original idea was to use the RFID tags embedded into the balls to read the player's score. Initial testing with the RFID was positive, as it could read different tags with different point values and add them. However, the issue arose during integration with the golf balls. The RFID was not strong enough to travel through the golf ball to get consistent readings. The issue only worsened with the launcher integration because the ball traveled too fast to be read. The RFID hardware needed to be changed with something that could be more reliable and work at faster speeds. The change to limit swithces proved to be very reliable and work on any speed we tested because of the simplicity of the tech. The lessoned learned was to not overcomplicate things sometimes instead of trying to make a golf ball smart just add a simple button. 
+
+## Skills Beyond 
+### Fernando
+- Laser cutting metal using the fablight in The Hive
+- Programming on a Seeed Studio XIAO SAMD21 mircocontroller
+- Using multiple SPI devices
 
 
 ## Special Thanks
