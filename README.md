@@ -19,7 +19,6 @@
 - [Skills Beyond](#skills-beyond)
   - [Fernando](#fernando)
   - [Ian](#ian)
-- [Special Thanks](#special-thanks)
 
 ---
 
@@ -35,6 +34,7 @@ Welcome to the project documentation for an innovative addition to the world of 
 
 1. Our motor was too powerful for the golf ball. We were unable to tune the motor speed too produce reasonable ball speeds.
 2. Our RFID reader was unable to read the RFID tags on the golf balls. We were unable to find a solution to this problem that would be cost feasible with our limited budget.
+3. The ball return mechanism was too complex for our limited time frame.
 
 ## Project Photos
 
@@ -54,17 +54,17 @@ Welcome to the project documentation for an innovative addition to the world of 
 
 ## BOM
 
-| Part             | Quantity | Price  | Link                                                                                          |
-| ---------------- | -------- | ------ | --------------------------------------------------------------------------------------------- |
-| Seeduino Xiao    | 2        | $5.90  | https://www.seeedstudio.com/Seeeduino-XIAO-p-4878.html                                        |
-| NeoPixel Matrix  | 2        | $9.95  | https://www.adafruit.com/product/1487                                                         |
-| 6s LiPo Battery  | 1        | $30.00 | https://www.getfpv.com/cnhl-black-series-100c-6s-lipo-battery-1300mah.html                    |
-| ESC SpeedyBee    | 1        | $60.00 | https://www.speedybee.com/speedybee-f7-v3-bl32-50a-4-in-1-esc/                                |
-| Bearings         | 4        | $10.00 | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
-| 3D Printed Parts | 1        | ~~~    | ~~~                                                                                           |
-| Limit Switch     | 2        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
-| Switches         | 2        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
-| Microphone       | 1        | $5.00  | https://www.amazon.com/gp/product/B07Q2ZQY2L/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1 |
+| Part             | Quantity | Price  |
+| ---------------- | -------- | ------ |
+| Seeduino Xiao    | 2        | $5.90  |
+| NeoPixel Matrix  | 2        | $9.95  |
+| 6s LiPo Battery  | 1        | $30.00 |
+| ESC SpeedyBee    | 1        | $60.00 |
+| Bearings         | 4        | $10.00 |
+| 3D Printed Parts | 1        | ~~~    |
+| Limit Switch     | 2        | $5.00  |
+| Switches         | 2        | $5.00  |
+| Microphone       | 1        | $5.00  |
 
 ## CAD
 
@@ -233,6 +233,7 @@ while (digitalRead(button))
 - Doing manual brushless motor control
 - Sublimation printing
 
+<!--
 # Special Thanks
 
 We would like to thank the following people for their contributions to this project:
@@ -242,3 +243,4 @@ Our ambassador and visionary, Golf Daddy:
 <img src="/images/ambassador.jpg" width=300 height=300>
 
 Golf Daddy helped us and supported us through the initial stages of this project. He provided us with the inspiration and motivation to pursue this project, and we are forever grateful for his guidance. But in all seriousness, he did help bring our spirits up by playing guitar during our long nights at the HIVE.
+-->
