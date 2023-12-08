@@ -25,6 +25,7 @@
 ![Golf Buddy](/images/GolfDaddy.png)
 
 [Demo Video (https://youtu.be/wagic4B7uYY)](https://youtu.be/wagic4B7uYY)
+[RFID Video (https://youtu.be/jHi_h-PA1bc)](https://youtu.be/jHi_h-PA1bc)
 
 # Overview
 
@@ -90,6 +91,8 @@ Welcome to the project documentation for an innovative addition to the world of 
 # Development
 
 ## RFID
+
+[RFID Video (https://youtu.be/jHi_h-PA1bc)](https://youtu.be/jHi_h-PA1bc)
 
 The original idea was to use the RFID tags embedded into the balls to read the player's score. Initial testing with the RFID was positive, as it could read different tags with different point values and add them. \
 <img src="/images/IMG_2636.jpg" width="300" height="300">
