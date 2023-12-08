@@ -105,25 +105,78 @@ Even though RFID didn't get implemented into the final design. A lot of effort w
 ```cpp
 #include <SPI.h>
 #include <MFRC522.h>
+#include <unordered_map>
 
-//RFID Scanner Setup
-#define RST_PIN         5           // Configurable, see typical pin layout above
-#define SS_PIN          7           // Configurable, see typical pin layout above
-MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance
+#define RST_PIN         5          // Configurable, see typical pin layout above
+#define SS_PIN          7         // Configurable, see typical pin layout above
+MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
 
 byte readCard[4];
-const char *rfidTags[] = {"931D7CD", "492561", "4A23E1", "451421"};
-int tagPoints[] = {1, 2, 3, 4};
+
+
+const char* rfidTags[] = {"931D7CD", "492561", "4A23E1","451421"};
+int tagPoints[] = {10,20,30,40};
+
 String tagID = "";
 int points = 0;
 
+
 void setup() {
-    mfrc522.PCD_Init();		            // Init MFRC522
-    delay(4);
-    mfrc522.PCD_DumpVersionToSerial();	// Show details of PCD - MFRC522 Card Reader details
+  
+	Serial.begin(9600);		// Initialize serial communications with the PC
+	while (!Serial);		// Do nothing if no serial port is opened (added for Arduinos based on ATMEGA32U4)
+	SPI.begin();			// Init SPI bus
+	mfrc522.PCD_Init();		// Init MFRC522
+	delay(4);	
+	mfrc522.PCD_DumpVersionToSerial();	// Show details of PCD - MFRC522 Card Reader details
+  Serial.println("Scan Card");
 }
 
-// TODO: Add the rest of the code needed for RFID also add in some more photos if you have them
+void loop() {
+
+	//Wait until new tag is available
+  while (getID()) {    
+
+    //Search for Tag in dictonary 
+    for(int i = 0; i < sizeof(rfidTags); i++) {
+      if (tagID == rfidTags[i]) {
+        points = tagPoints[i];
+        Serial.print("TAG: ");
+        Serial.println(tagID);
+
+        Serial.print("Points: ");
+        Serial.println(points);
+        break;
+      }
+    }
+
+    delay(200);
+  }
+}
+
+
+//Read new tag if available
+boolean getID() 
+{
+  // Getting ready for Reading PICCs
+  if ( ! mfrc522.PICC_IsNewCardPresent()) { //If a new PICC placed to RFID reader continue
+  //Serial.println("NEWCARD");
+  return false;
+  }
+  if ( ! mfrc522.PICC_ReadCardSerial()) { //Since a PICC placed get Serial and continue
+  //Serial.println("READCARD");
+  return false;
+  }
+  tagID = "";
+  for ( uint8_t i = 0; i < 4; i++) { // The MIFARE PICCs that we use have 4 byte UID
+  //readCard[i] = mfrc522.uid.uidByte[i];
+  tagID.concat(String(mfrc522.uid.uidByte[i], HEX)); // Adds the 4 bytes in a single String variable
+  }
+  tagID.toUpperCase();
+  mfrc522.PICC_HaltA(); // Stop reading
+  return true;
+}
+
 ```
 
 ---
